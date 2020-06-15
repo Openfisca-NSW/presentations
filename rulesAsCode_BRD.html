@@ -17,6 +17,13 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+		<link rel="stylesheet" href="lib/css/monokai.css">
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+		  Reveal.initialize({
+		    plugins: [ RevealHighlight ]
+		  });
+		</script>
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -118,7 +125,7 @@
 					<ul>
 						<li>BRD - Community Gaming </li>
 						<li>ESS - NABERS</li>
-						<li>Many examples in New Zealand and France</li>
+						<li>Many examples in New Zealand, France, Tunisia and Canada</li>
 					</ul>
 				</section>
 				<section>
@@ -130,6 +137,7 @@
 					</section>
 
 				</section>
+				<!--
 				<section>
 					<section data-background-iframe="https://mes-aides.gouv.fr/" data-background-interactive>
 						<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
@@ -139,6 +147,7 @@
 					</section>
 
 				</section>
+				!-->
 
 
 
@@ -156,6 +165,7 @@
 						<ul>
 							<li> BDM - Marriages </li>
 							<li> Revenue - Land Tax, Fines, Speed cameras </li>
+							<li> SIRA - Workers Compensation </li>
 						</ul>
 
 
@@ -187,19 +197,57 @@
 					</section>
 					<section>
 						<h2>Translating Model to code</h2>
-						<p> Show code snippet related to concept model</p>
+						<pre><code data-trim data-noescape>
+						def formula(organisation, period, parameters):
+						    return (
+							organisation('is_charity', period) * 
+							   organisation('gaming_activity_is_charity_housie', period) * 
+							   (organisation('proceeds_to_benefitting_organisation', period) >= 
+							   		parameters(period).permitted_games.housie.min_gross_proceeds_to_benefit_org * 
+							   organisation('gross_proceeds_from_gaming_activity', period)) *
+							   (organisation('total_expenses_for_conducting_gaming_activity', period) 
+							   	<= parameters(period).permitted_games.housie.max_expenses.charity_housie * organisation('gross_proceeds_from_gaming_activity', period)) * (organisation('total_prize_value_from_single_gaming_session', period) <= parameters(period).permitted_games.housie.max_value_of_prize_per_session.charity_housie) * (organisation('total_prize_value_from_single_gaming_session', period) <= parameters(period).permitted_games.housie.max_value_of_prizes_per_gross_proceeds * organisation('gross_proceeds_from_gaming_activity', period)) * (organisation('number_of_tickets', period) <= parameters(period).permitted_games.housie.max_no_of_tickets))
+						</code></pre>
 					</section>
 					<section>
 						<h2>Test Case 1</h2>
-						<p> show code snippet of test case</p>
+						<pre><code data-trim data-noescape>
+						
+						- name: Organisation is conducting a charity housie that is permitted
+						  period: 2020-07
+						  input:
+						    is_charity: True
+						    gaming_activity_is_charity_housie: True
+						    proceeds_to_benefitting_organisation: 3900
+						    gross_proceeds_from_gaming_activity: 4000
+						    total_expenses_for_conducting_gaming_activity: 100
+						    total_prize_value_from_single_gaming_session: 2000
+						    number_of_tickets: 40
+						  output:
+						    charity_housie__game_meets_criteria: True
+						    charity_housie__authority_required: False
+						</code></pre>
 					</section>
 					<section>
 						<h2>Test Case 2</h2>
-						<p> show code snippet of test case</p>
+						<pre><code data-trim data-noescape>
+						- name: Organisation is not a charity, hence charity housie is not permitted
+						  period: 2020-07
+						  input:
+						    is_charity: False
+						    gaming_activity_is_charity_housie: True
+						    proceeds_to_benefitting_organisation: 3900
+						    gross_proceeds_from_gaming_activity: 4000
+						    total_expenses_for_conducting_gaming_activity: 100
+						    total_prize_value_from_single_gaming_session: 2000
+						    number_of_tickets: 40
+						  output:
+						    charity_housie__game_meets_criteria: False
+						    charity_housie__authority_required: False	
+						</code></pre>
+
 					</section>
-					<section>
-						<h2>API</h2>
-						<p> screenshot of API</p>
+					<section data-background-iframe="http://nsw-rules-dev.herokuapp.com/charity_housie__game_meets_criteria" data-background-interactive>
 					</section>
 					<section>
 						<h2>Website</h2>
