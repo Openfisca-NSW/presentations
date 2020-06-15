@@ -193,33 +193,33 @@
 					</section>
 					<section>
 						<h2>Concept Modelling</h2>
-						<p> Show concept model snippet here</p>
+						<img width="60%"  src="img/concept-model.png" alt="Concept Model">
 					</section>
 					<section>
 						<pre><code data-trim data-noescape>
 						def formula(organisation, period, parameters):
 						    return (
-							organisation('is_charity', period) * 
-							   organisation('gaming_activity_is_charity_housie', period) * 
-							   (organisation('proceeds_to_benefitting_organisation', period) 
-							   	>= parameters(period).permitted_games.housie.min_gross_proceeds_to_benefit_org * 
+							organisation('is_charity', period) *
+							   organisation('gaming_activity_is_charity_housie', period) *
+							   (organisation('proceeds_to_benefitting_organisation', period)
+							   	>= parameters(period).permitted_games.housie.min_gross_proceeds_to_benefit_org *
 							   organisation('gross_proceeds_from_gaming_activity', period)) *
-							   (organisation('total_expenses_for_conducting_gaming_activity', period) 
-							   	<= parameters(period).permitted_games.housie.max_expenses.charity_housie * 
-							   organisation('gross_proceeds_from_gaming_activity', period)) * 
-							   (organisation('total_prize_value_from_single_gaming_session', period) 
-							   	<= parameters(period).permitted_games.housie.max_value_of_prize_per_session.charity_housie) * 
-							   (organisation('total_prize_value_from_single_gaming_session', period) 
-							   	<= parameters(period).permitted_games.housie.max_value_of_prizes_per_gross_proceeds * 
-							   organisation('gross_proceeds_from_gaming_activity', period)) * 
-							   (organisation('number_of_tickets', period) 
+							   (organisation('total_expenses_for_conducting_gaming_activity', period)
+							   	<= parameters(period).permitted_games.housie.max_expenses.charity_housie *
+							   organisation('gross_proceeds_from_gaming_activity', period)) *
+							   (organisation('total_prize_value_from_single_gaming_session', period)
+							   	<= parameters(period).permitted_games.housie.max_value_of_prize_per_session.charity_housie) *
+							   (organisation('total_prize_value_from_single_gaming_session', period)
+							   	<= parameters(period).permitted_games.housie.max_value_of_prizes_per_gross_proceeds *
+							   organisation('gross_proceeds_from_gaming_activity', period)) *
+							   (organisation('number_of_tickets', period)
 							   	<= parameters(period).permitted_games.housie.max_no_of_tickets))
 						</code></pre>
 					</section>
 					<section>
 						<h2>Test Case 1</h2>
 						<pre><code data-trim data-noescape>
-						
+
 						- name: Organisation is conducting a charity housie that is permitted
 						  period: 2020-07
 						  input:
@@ -250,7 +250,7 @@
 						    number_of_tickets: 40
 						  output:
 						    charity_housie__game_meets_criteria: False
-						    charity_housie__authority_required: False	
+						    charity_housie__authority_required: False
 						</code></pre>
 
 					</section>
