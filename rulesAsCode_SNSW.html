@@ -210,19 +210,20 @@
 						<h3>Test Case 1</h3>
 						<pre><code data-trim data-noescape>
 
-						- name: Organisation is conducting a charity housie that is permitted
+						- name: Small business is eligible for a eligible for COVID grant
 						  period: 2020-07
 						  input:
-						    is_charity: True
-						    gaming_activity_is_charity_housie: True
-						    proceeds_to_benefitting_organisation: 3900
-						    gross_proceeds_from_gaming_activity: 4000
-						    total_expenses_for_conducting_gaming_activity: 100
-						    total_prize_value_from_single_gaming_session: 2000
-						    number_of_tickets: 40
+						    is_small_business: True
+						    has_abn: True
+						    highly_impacted: True
+						    number_of_fte: 3
+						    annual_turnover: 85000
+						    based_in_nsw: True
+						    payroll: 850000
+						    lowest_turnover_for_two_weeks: 1000
+						    corresponding_turnover_last_year: 30000
 						  output:
-						    charity_housie__game_meets_criteria: True
-						    charity_housie__authority_required: False
+								eligible_for_covid_19_business_grant: True
 						</code></pre>
 					</section>
 			        </section>
