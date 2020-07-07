@@ -52,7 +52,7 @@
 					<h1>Rules as Code</h1>
 					<h3>What it means, and why we're doing it</h3>
 					<p>
-						<small>Sara Falamaki and Asghar Kazi</small>
+						<small>Sara Falamaki and Asghar Kazi (You probably need to change this intro slide! - L)</small>
 					</p>
 				</section>
 
@@ -77,26 +77,20 @@
 					</section>
 					<section>
 						<p>Often the interaction between rules is incomprehensible to mere humans...</p>
-
 					         <img width="40%"  src="img/parking.jpg" alt="Down arrow">
-
 					</section>
 					<section>
-						<p>Liam - User research saying ESS is confuzzling</p>
-
-
+						<p>And when rules change, it becomes even more confusing!</p>
+						<img width="80%"  src="img/ess_rule_change_research.jpg" alt="Down arrow">
 					</section>
-
 					<section>
-						<h3>Lets do it better</h3>
+						<h3>Let's do rules better</h3>
 						<ul>
 							<li>By explaining our rules to a stupid computer, we can help ensure they make sense</li>
 							<li>Rules and computer systems become easier to integrate with, test, and modify</li>
 							<li>By reducing the burden of legislation, we improve our customer's experience</li>
 						</ul>
-
 					</section>
-
 					<section>
 						<h3>We promise to</h3>
 						<ul>
@@ -107,7 +101,6 @@
 						</ul>
 						<p>... for both our customers and staff</p>
 					</section>
-
 			        </section>
 
 
@@ -129,7 +122,7 @@
 					<h3>Rules as Code is here TODAY</h3>
 					<p> TJ - This is your section to shine! </p>
 					<ul>
-						<li>Tunisia's (or was it Senegal?) Taxation System - 36 Hour Hackathon (factcheck)</li>
+						<li>Senegal's Taxation System - entire system coded in 36 hour hackathon</li>
 						<li>Etax - prefilling, different UI for individuals and agents, etc</li>
 						<li>ESS - NABERS</li>
 					</ul>
@@ -163,53 +156,94 @@
 
 				<section>
 					<section>
-					<h3>How does it work? Liam: change this to ESS</h3>
+					<h3>How does doing Rules as Code work?</h3>
 					<ol>
 						<li>Choose legislation to translate, or co-author new legislation</li>
 						<li>Concept Modelling</li>
 						<li>Code Concepts</li>
 						<li>Test understanding and code with test scenarios</li>
+						<li>Review the code with legal experts</li>
 						<li>Deploy API, and integrate services with it</li>
 					</ol>
-
-
 					</section>
 					<section>
-						<h3>Encode Business Rules for COVID19 Recovery</h3>
+						<h3>Let's use the example of the Energy Savings Scheme to explain how this process works.</h3>
+					</section>
+										<section>
+					<h3>What is the Energy Savings Scheme?<br></h3>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">In a sentence, the Energy Savings Scheme (Scheme) provides financial incentives to create energy savings, through conducting energy savings activities.</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">The aim of the Scheme is to encourage investment in energy efficiency, lower energy usage and lower energy costs, across households, business and industry.</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">The Scheme is coordinated by DPIE and administered by the Independent Pricing and Regulatory Tribunal (IPART), who sit within DCS. </span></p>
 					</section>
 					<section>
-						<h3>The Criteria</h3>
-					         <img width="90%"  src="img/COVID19_biz_rules.png" alt="Down arrow">
+					<h3>A simplified flow of how the Scheme works<br></h3>
+					<img width="90%" alt="Down arrow" data-lazy-loaded="" data-src="img/ess_process_flow.jpg">
 					</section>
 					<section>
-						<h3>The Corresponding Code</h3>
-						<img width="90%" src="img/COVID19_biz_code.png" alt="code">
+					<h3>Success of the Scheme to date<br></h3>
+					<p style="test-align:left;"><span style="position: left; font-size:0.75em">Since the beginning of the Scheme in July 2009, it has achieved:</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em"><b>28,000 GWh</b> of energy savings (through to 2028)</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em"><b>$6.2 billion</b> in energy bill savings (through to 2028)</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em"><b>29 million</b> Energy Savings Certificates (since 2009)</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.25em"><i>Statistics current to 26 May 2020.</i></span></p>
 					</section>
 					<section>
-						<h3>Test Case</h3>
-						<pre><code data-trim data-noescape>
-
-						- name: Small business is eligible for a eligible for COVID grant
-						  period: 2020-07
-						  input:
-						    is_small_business: True
-						    has_abn: True
-						    highly_impacted: True
-						    number_of_fte: 3
-						    annual_turnover: 85000
-						    based_in_nsw: True
-						    payroll: 850000
-						    lowest_turnover_for_two_weeks: 1000
-						    corresponding_turnover_last_year: 30000
-						  output:
-								eligible_for_covid_19_business_grant: True
-						</code></pre>
+					<h3>In context of NSW's overall energy savings targets...<br></h3>
+					<img width="90%" alt="Down arrow" data-lazy-loaded="" data-src="img/ESS_targets.jpg">
+					</section>
+					<section>
+					<h3>The ESS and Rules<br></h3>
+					<p style="test-align:left;"><span style="position: left; font-size:0.75em">The activities eligible for ESS incentives are defined within the Energy Savings Scheme Rule (ESS Rule).</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.75em">DPIE updates the Rule approximately yearly, to continue incentivising better than best practice.</span></p>
+					</section>
+					<section>
+					<h3>A quick view of how the Rule has evolved over time.<br></h3>
+					<img width="120%" alt="Down arrow" data-lazy-loaded="" data-src="img/ess_rule_length.png">
+					</section>
+					<section>
+					<h3>The future of the ESS<br></h3>
+					<p style="test-align:left;"><span style="position: centre; font-size:0.75em">The Energy Security Safeguard (Safeguard) was announced in late 2019, with two major components:</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">An expansion of the existing efficiency Scheme, with increased energy savings targets</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">The introduction of a new demand reduction scheme, with a new Rule for incentivising demand reduction activities</span></p>
+					<p><span style="position: left; font-size:0.3em"><a href="https://energy.nsw.gov.au/media/1921/download" target="_blank">Read more about the Safeguard in the NSW Electricity Strategy.</a></span></p>
+					</section>
+					<section>
+					<h3>In summary<br></h3>
+					<p style="test-align:left;"><span style="position: centre; font-size:0.50em">The Scheme incentivises energy savings activities which improve energy efficiency</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">It makes significant contributions to NSW's energy savings targets</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">There's a lengthy, complex Rule which defines what's eligible for incentives</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">The new Safeguard is going to expand the scope of the Scheme</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">Continuing current Scheme delivery makes it difficult for us to achieve our new targets - which means we need to make it easier to access the Scheme</span></p>
+					<p style="test-align:left;"><span style="position: left; font-size:0.50em">Reducing the complexity involved with the Rules, and enabling digital delivery of the Rules eases access to the Scheme!</span></p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>What we've done so far is...</h3>
+						<p span style="font-size:0.7em">Worked with DCS to learn how to build a Rules as Code coding environment.</p>
+						<p span style="font-size:0.7em">Coded the NABERS method of the Rule (for Offices and Apartments).</p>
+						<p span style="font-size:0.7em">Built test cases for the use of this method.</p>
+						<p span style="font-size:0.7em">Reviewed the code with Legal.</p>						
+						<p span style="font-size:0.7em">Started the process of building a proof of concept webform.</p>			
+						<p span style="font-size:0.7em">Started planning the next sections of the ESS to code.</p>			
+					</section>
+					<section>
+						<h3>A simple example of the value of our current work.</h3>
+						<p span style="font-size:0.7em">There's a term "Counted Energy Savings" in the NABERS method of the ESS.</p>
+						<p span style="font-size:0.7em">It appears twice - and it's defined slightly differently both times it appears.</p>
+					</section>
+					<section>
+					<p> The difference in meanings is summarised below.<p>
+					<img width="80%" alt="Down arrow" data-lazy-loaded="" data-src="img/counted_energy_ savings_definitions.jpg">
+					</section>
+					<section>
+					<p>Strictly following the existing definitions of Counted Energy Savings within the Rule, it would be impossible to calculate ESCs within NABERS because of this ambiguity - the machine would be unsure of what definition to use at this point of the calculation, and refuse to finish it.<p>
 					</section>
 					<section>
 						<h3>Months and Dates</h3>
 						<pre><code data-trim data-noescape>
 
-						Months and 4.5 year old children
+						Months and 4.5 year old children - TJ, this is for you to put whatever your heart wants to :)
 
 						</code></pre>
 					</section>
@@ -221,9 +255,66 @@
 
 						</code></pre>
 					</section>
+					<section>
+					<h3>What's so special about months?</h3>
+					<p>A month is a common concept that appears everywhere.</p>
+					<p>It appears in the ESS a few times, such as in 8.8.8:</p>
+						<img width="100%" alt="Down arrow" data-lazy-loaded="" data-src="img/section_8_8_8.png">
+					</section>
+					<section>
+					<p>But what exactly <em>is</em> a month?</p>
+					<p>Let's see what the law says.</p>
+					</section>
+					<section data-background-iframe="https://www.legislation.nsw.gov.au/#/view/act/1987/15/part2/sec21" data-background-interactive>
+						<div style="position: absolute; width: 20%; left: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<p>This is the definition of months in the Interpretations Act.</p>
+					</section>
+					<section>
+						<h3> The legal interpretation of this definition. </h3>
+						<p> So for (a), <p>
+						<p><span style="position: left; font-size:0.5em">a month begins on 12:00:01am on 15 July, and ends on 11:59:59pm on 14 August. Next month begins at 12:00:01am on 15 August, etc.</p>
+						<p> For (b), <p>
+						<p><span style="position: left; font-size:0.5em">a month begins on 12:00:01am on 31 August, and ends on 11:59:59pm on 30 September. Next month begins at 12:00:01am on 1 October, ends 11:59:59pm on 31 October, etc.</p>
+						<p> This functionality is difficult to replicate in code.</p>
+					</section>
+					<section>
+						<h3> What we did with this information. </h3>
+						<p> We built a function to replicate this definition.</p>
+						<p> There's an interesting finding we found, in codifying the strict legal interpretation of a common term and applying test cases to it. </p>
+					</section>
+					<section>
+						<p> Here's a test case that looks at 8.8.8, specifically at leap years.<p>
+						<img width="100%" alt="Down arrow" data-lazy-loaded="" data-src="img/months_example.jpg">	
+					</section>
+					<section>
+						<h3> The immediate value here is making the rule stronger, through removing ambiguity, finding loopholes and then building a rule development process around Rules as Code.</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+					<h3>Better Rules</h3>
+					<p>Because we've got increasing targets, a second new Rule coming into effect and significant existing complexity which could scale into unworkable complexity, we're integrating Rules as Code into our rule development processes.</p>
+					<p>The Better Rules framework provides a template for how we can do rule changes</p>
+					<p><em>and</em></p>
+					<p>Coding the rules will transform how the rules operate and are implemented.</p>
+					</section>
+					<section>
+					<h3>The current rule change process is very linear.</h3>
+					<p>Here's a simplified version of the current process.</p>
+						<img width="85%" alt="Down arrow" data-lazy-loaded="" data-src="img/current_rule_change_process.jpg">
+					</section>
+					<section>
+					<h4>The end goal is to use an integrated Better Rules approach to build a better end product.</h4>
+						<img width="85%" alt="Down arrow" data-lazy-loaded="" data-src="img/better_rules_process.jpg">
+					</section>
+					<section>
+					<h3>There's three keys to building Better Rules for the ESS:</h3>
+						<p><span style="position: left; font-size:0.6em">- integrating the perspectives and knowledge of <strong><em>different</em></strong> experts, such as legal experts, subject matter experts and digital specialists</p>
+						<p><span style="position: left; font-size:0.6em">- engaging in a process of continuous iteration - prototyping Better Rules approaches and learning from development</p>
+						<p><span style="position: left; font-size:0.6em">- designing rules with digital service delivery, and strong outcomes for the user in mind</p>
+					</section>
 
-
-			        </section>
+				</section>
 				<section>
 					<section>
 						<h3>ESS example UX and code</h3>
