@@ -289,23 +289,17 @@
 					</section>
 					<section>
 						<h3>Months and Active Kids</h3>
+						<p>Half a year can be defined in many different ways:
 						<small>
-						<pre><code data-trim data-noescape>
-
-class age_in_months(Variable):
-    value_type = int
-    entity = Person
-    definition_period = MONTH
-    label = u"Person's age (in months)"
-
-    # A person's age is computed according to its birth date.
-    def formula(persons, period, parameters):
-        is_birthday_past = persons('is_birthday_past', period)
-        age_in_years = persons('age', period) + where(is_birthday_past, 0, 1)
-        birth_month = persons('birth_month', period)
-        return (age_in_years * 12) + (period.start.month - birth_month)
-
-						</code></pre></small>
+						<ul>
+							<li>6 months</li>
+							<li>182.5 or 183 days</li>
+							<li>4380 hours, or 4392 hours (from their date of birth)</li> 
+							<li>... and we need to know what time they were born!
+						</ul>
+						</small>
+						<p>This means that some children who would be eligible may miss out just because of our interpretation of the rules</p>
+						
 					</section>
 
 				</section>
