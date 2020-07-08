@@ -52,7 +52,7 @@
 					<h1>Rules as Code</h1>
 					<h3>What it means, and why we're doing it</h3>
 					<p>
-						<small>Sara Falamaki and Asghar Kazi (You probably need to change this intro slide! - L)</small>
+						<small>Sara Falamaki, TJ Harrop, Liam McCann and Asghar Kazi</small>
 					</p>
 				</section>
 
@@ -80,7 +80,7 @@
 					         <img width="40%"  src="img/parking.jpg" alt="Down arrow">
 					</section>
 					<section>
-						<p>And when rules change, it becomes even more confusing!</p>
+						<p>...when rules change, it becomes even more confusing!</p>
 						<img width="80%"  src="img/ess_rule_change_research.jpg" alt="Down arrow">
 					</section>
 					<section>
@@ -124,7 +124,8 @@
 					<ul>
 						<li>Senegal's Taxation System - entire system coded in 36 hour hackathon</li>
 						<li>Etax - prefilling, different UI for individuals and agents, etc</li>
-						<li>ESS - NABERS</li>
+						<li>ESS - NABERS, BRD - Community Gaming Regulation 2020</li>
+						<li>France, Canada, New Zealand, Senegal, Tunisia... </li>
 					</ul>
 				</section>
 
@@ -167,7 +168,7 @@
 					</ol>
 					</section>
 					<section>
-						<h3>Let's use the example of the Energy Savings Scheme to explain how this process works.</h3>
+						<h3>Let's use the example of the Energy Savings Scheme to explain how this process works</h3>
 					</section>
 										<section>
 					<h3>What is the Energy Savings Scheme?<br></h3>
@@ -197,7 +198,7 @@
 					<p style="test-align:left;"><span style="position: left; font-size:0.75em">DPIE updates the Rule approximately yearly, to continue incentivising better than best practice.</span></p>
 					</section>
 					<section>
-					<h3>A quick view of how the Rule has evolved over time.<br></h3>
+					<h3>A quick view of how the Rule has evolved over time<br></h3>
 					<img width="120%" alt="Down arrow" data-lazy-loaded="" data-src="img/ess_rule_length.png">
 					</section>
 					<section>
@@ -219,17 +220,19 @@
 				</section>
 				<section>
 					<section>
-						<h3>What we've done so far is...</h3>
-						<p span style="font-size:0.7em">Worked with DCS to learn how to build a Rules as Code coding environment.</p>
-						<p span style="font-size:0.7em">Coded the NABERS method of the Rule (for Offices and Apartments).</p>
-						<p span style="font-size:0.7em">Built test cases for the use of this method.</p>
-						<p span style="font-size:0.7em">Reviewed the code with Legal.</p>						
-						<p span style="font-size:0.7em">Started the process of building a proof of concept webform.</p>			
-						<p span style="font-size:0.7em">Started planning the next sections of the ESS to code.</p>			
+						<h3>What we've done so far</h3>
+						<ul span style="font-size:0.7em">
+							<li>Worked with DCS to learn how to build a <em>Rules as Code</em> coding environment.</li>
+							<li>Coded the NABERS method of the Rule (for Offices and Apartments).</li>
+							<li>Built test cases for the use of this method.</li>
+							<li>Reviewed the code with Legal.</li>						
+							<li>Started the process of building a proof of concept webform.</li>			
+							<li>Started planning the next sections of the ESS to code.</li>			
+						</ul>
 					</section>
 					<section>
-						<h3>A simple example of the value of our current work.</h3>
-						<p span style="font-size:0.7em">There's a term "Counted Energy Savings" in the NABERS method of the ESS.</p>
+						<h3>A simple example of the value of our current work</h3>
+						<p span style="font-size:0.7em">There's a term <em>Counted Energy Savings</em> in the NABERS method of the ESS.</p>
 						<p span style="font-size:0.7em">It appears twice - and it's defined slightly differently both times it appears.</p>
 					</section>
 					<section>
@@ -237,25 +240,10 @@
 					<img width="80%" alt="Down arrow" data-lazy-loaded="" data-src="img/counted_energy_ savings_definitions.jpg">
 					</section>
 					<section>
-					<p>Strictly following the existing definitions of Counted Energy Savings within the Rule, it would be impossible to calculate ESCs within NABERS because of this ambiguity - the machine would be unsure of what definition to use at this point of the calculation, and refuse to finish it.<p>
+						<p>Strictly following the existing definitions of <em>Counted Energy Savings</em> within the Rule, it would be impossible to calculate ESCs within NABERS because of this ambiguity</p>
+						<p>The machine would be unsure of what definition to use at this point of the calculation, and refuse to finish it.</p>
 					</section>
-					<section>
-						<h3>Months and Dates</h3>
-						<pre><code data-trim data-noescape>
-
-						Months and 4.5 year old children - TJ, this is for you to put whatever your heart wants to :)
-
-						</code></pre>
-					</section>
-					<section>
-						<h3>Learning things</h3>
-						<pre><code data-trim data-noescape>
-
-						Months and 4.5 year old children
-
-						</code></pre>
-					</section>
-					<section>
+										<section>
 					<h3>What's so special about months?</h3>
 					<p>A month is a common concept that appears everywhere.</p>
 					<p>It appears in the ESS a few times, such as in 8.8.8:</p>
@@ -287,13 +275,47 @@
 						<img width="100%" alt="Down arrow" data-lazy-loaded="" data-src="img/months_example.jpg">	
 					</section>
 					<section>
-						<h3> The immediate value here is making the rule stronger, through removing ambiguity, finding loopholes and then building a rule development process around Rules as Code.</h3>
+						<h3>The value is stronger rules</h3>
+						<p>By removing ambiguity, finding loopholes and then building a rule development process around <em>Rules as Code</em>.</p>
 					</section>
+					<section>
+						<h3>Months and Active Kids</h3>
+						<p>Age children become eligible for <em>Active Kids</em> vouchers in NSW is defined as:</p>
+						<p>
+						<pre><code data-trim>
+						Older than 4.5 years old and have started school FIXME FIXME FIXME
+						</code></pre>
+						</p>
+					</section>
+					<section>
+						<h3>Months and Active Kids</h3>
+						<small>
+						<pre><code data-trim data-noescape>
+
+class age_in_months(Variable):
+    value_type = int
+    entity = Person
+    definition_period = MONTH
+    label = u"Person's age (in months)"
+
+    # A person's age is computed according to its birth date.
+    def formula(persons, period, parameters):
+        is_birthday_past = persons('is_birthday_past', period)
+        age_in_years = persons('age', period) + where(is_birthday_past, 0, 1)
+        birth_month = persons('birth_month', period)
+        return (age_in_years * 12) + (period.start.month - birth_month)
+
+						</code></pre></small>
+					</section>
+
 				</section>
 				<section>
 					<section>
 					<h3>Better Rules</h3>
 					<p>Because we've got increasing targets, a second new Rule coming into effect and significant existing complexity which could scale into unworkable complexity, we're integrating Rules as Code into our rule development processes.</p>
+					</section>
+					<section>
+						<h3>Better Rules</h3>
 					<p>The Better Rules framework provides a template for how we can do rule changes</p>
 					<p><em>and</em></p>
 					<p>Coding the rules will transform how the rules operate and are implemented.</p>
@@ -308,10 +330,12 @@
 						<img width="85%" alt="Down arrow" data-lazy-loaded="" data-src="img/better_rules_process.jpg">
 					</section>
 					<section>
-					<h3>There's three keys to building Better Rules for the ESS:</h3>
-						<p><span style="position: left; font-size:0.6em">- integrating the perspectives and knowledge of <strong><em>different</em></strong> experts, such as legal experts, subject matter experts and digital specialists</p>
-						<p><span style="position: left; font-size:0.6em">- engaging in a process of continuous iteration - prototyping Better Rules approaches and learning from development</p>
-						<p><span style="position: left; font-size:0.6em">- designing rules with digital service delivery, and strong outcomes for the user in mind</p>
+					<h3>There's three keys to building Better Rules for the ESS</h3>
+					<ul span style="position: left; font-size:0.6em">
+						<li>Integrating the perspectives and knowledge of <strong><em>different</em></strong> experts, such as legal experts, subject matter experts and digital specialists</li>
+						<li>Engaging in a process of continuous iteration - prototyping Better Rules approaches and learning from development</li>
+						<li>Designing rules with digital service delivery, and strong outcomes for the user in mind</li>
+					</ul>
 					</section>
 				</section>
 				<section>
