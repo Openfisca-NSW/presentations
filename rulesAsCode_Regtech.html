@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Rules As Code</title>
+
+		<meta name="description" content="What it means, and why we're doing it!">
+		<meta name="author" content="Sara Falamaki">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="lib/css/monokai.css">
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+		  Reveal.initialize({
+		    plugins: [ RevealHighlight ]
+		  });
+		</script>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Rules as Code</h1>
+					<h3>What it means, and why we're doing it</h3>
+						<p>
+							<small>Transformation Unit, DCS</small>
+						</p>
+				</section>
+
+
+			        <section>
+					<h2>What are we doing?</h2>
+					<ul>
+						<li>Manually translating <em>prescriptive</em> rules into computer code</li>
+						<li>Publishing this translation, so computer systems can use it</li>
+						<li>Testing our interpretation of the rules with clear, reproducible test data</li>
+					</ul>
+
+				</section>
+
+
+				<section>
+					<h2>Rules as Code is here TODAY</h2>
+					<ul>
+						<li>BRD - Community Gaming </li>
+						<li>DPIE - Energy Savings Scheme Rules </li>
+						<li>Many examples in New Zealand, France, Tunisia and Canada</li>
+					</ul>
+				</section>
+				<!--
+				<section>
+					<section data-background-iframe="https://smartstart.services.govt.nz/financial-help" data-background-interactive>
+						<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<h2>What does it look like?</h2>
+						<p>This is a questionaire that can be used to determine what financial help you're eligible for in New Zealand, created using Rules As Code</p>
+						</div>
+					</section>
+
+				</section>
+				<section>
+					<section data-background-iframe="https://mes-aides.gouv.fr/" data-background-interactive>
+						<div style="position: absolute; width: 40%; right: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2); background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px; font-size: 20px; text-align: left;">
+						<h2>What does it look like?</h2>
+						<p>Here is a French example</p>
+						</div>
+					</section>
+
+				</section>
+				!-->
+
+
+				<section>
+					<!--
+
+					<section>
+					<h2>Our Approach </h2>
+					<p> We aim to make Rules as Code the easiest approach for drafting, consulting, implementing and communicating prescriptive rules and legislation.</p>
+				        </section>
+								!-->
+					<section>
+
+
+						<h2>We are building a RaC platform for NSW</h2>
+					         <img width="90%"  src="img/data_flow.png" alt="data_flow">
+					</section>
+
+					<section>
+						<h2>Community Gaming Regulation 2020 </h2>
+						<ul>
+							<li><a href="https://www.fairtrading.nsw.gov.au/community-gaming/community-gaming-regulation-check/_nocache" target="_blank">Web UI</a></li>
+							<li><a href="https://github.com/Openfisca-NSW/openfisca_nsw_community_gaming" target="_blank">Coded open-source rules</a></li>
+							<li><a href="https://nsw-rules-dev.herokuapp.com/" target="_blank">NSW Rules API Documentation</a></li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h2>Improved experience for compliance </h2>
+						<section>
+						    <img width="500" src="img/Charity_housie_rules.png">
+						    <img width="300" src="img/Charity_housie_eligibility.png">
+						</section>
+					</section>
+
+					<section>
+
+					<section>
+						<h2>Test Case - Example</h2>
+						<pre><code data-trim data-noescape>
+
+						- name: Organisation is conducting a charity housie that is permitted
+						  period: 2020-07
+						  input:
+						    is_charity: True
+						    gaming_activity_is_charity_housie: True
+						    proceeds_to_benefitting_organisation: 3900
+						    gross_proceeds_from_gaming_activity: 4000
+						    total_expenses_for_conducting_gaming_activity: 100
+						    total_prize_value_from_single_gaming_session: 2000
+						    number_of_tickets: 40
+						  output:
+						    charity_housie__game_meets_criteria: True
+						    charity_housie__authority_required: False
+						</code></pre>
+					</section>
+				</section>
+
+					<section>
+						<h2>We are exploring opportunities for collaboration</h2>
+						<ul>
+							<li> Integrate with businesses & government systems </li>
+
+							<li> Other solutions in the market </li>
+
+							<li> How and where work can be leveraged </li>
+
+						</ul>
+
+					</section>
+
+
+						<section>
+							<h3>Commbank's Benefits Search</h3>
+						         <img width="20%"  src="img/CBA/cba5.png" alt="covid benefits">
+
+						</section>
+						</section>
+				<!--
+
+				<section>
+
+
+					<section>
+					<h2>How does it work?</h2>
+					<ol>
+						<li>Choose legislation/regulation to translate, or co-author new regulation/legislation</li>
+						<li>Concept Modelling</li>
+						<li>Code Concepts</li>
+						<li>Test understanding and code with test scenarios</li>
+						<li>Deploy API, and integrate services with it</li>
+					</ol>
+
+
+					</section>
+					<section>
+						<h2>Co-author new regulation using Better Rules Approach</h2>
+					</section>
+					<section>
+						<img width="60%"  src="img/regulation.png" alt="CGR 2020">
+					</section>
+					<section>
+						<h2>Concept Modelling</h2>
+						<img width="60%"  src="img/concept-model.png" alt="Concept Model">
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+						def formula(organisation, period, parameters):
+						    return (
+							organisation('is_charity', period) *
+							   organisation('gaming_activity_is_charity_housie', period) *
+							   (organisation('proceeds_to_benefitting_organisation', period)
+							   	>= parameters(period).permitted_games.housie.min_gross_proceeds_to_benefit_org *
+							   organisation('gross_proceeds_from_gaming_activity', period)) *
+							   (organisation('total_expenses_for_conducting_gaming_activity', period)
+							   	<= parameters(period).permitted_games.housie.max_expenses.charity_housie *
+							   organisation('gross_proceeds_from_gaming_activity', period)) *
+							   (organisation('total_prize_value_from_single_gaming_session', period)
+							   	<= parameters(period).permitted_games.housie.max_value_of_prize_per_session.charity_housie) *
+							   (organisation('total_prize_value_from_single_gaming_session', period)
+							   	<= parameters(period).permitted_games.housie.max_value_of_prizes_per_gross_proceeds *
+							   organisation('gross_proceeds_from_gaming_activity', period)) *
+							   (organisation('number_of_tickets', period)
+							   	<= parameters(period).permitted_games.housie.max_no_of_tickets))
+						</code></pre>
+					</section>
+					!-->
+
+					<!--
+					<section>
+						<h2>Test Case 2</h2>
+						<pre><code data-trim data-noescape>
+						- name: Organisation is not a charity, hence charity housie is not permitted
+						  period: 2020-07
+						  input:
+						    is_charity: False
+						    gaming_activity_is_charity_housie: True
+						    proceeds_to_benefitting_organisation: 3900
+						    gross_proceeds_from_gaming_activity: 4000
+						    total_expenses_for_conducting_gaming_activity: 100
+						    total_prize_value_from_single_gaming_session: 2000
+						    number_of_tickets: 40
+						  output:
+						    charity_housie__game_meets_criteria: False
+						    charity_housie__authority_required: False
+						</code></pre>
+
+					</section>
+					<section data-background-iframe="https://nsw-rules-dev.herokuapp.com/charity_housie__game_meets_criteria" data-background-interactive>
+					</section>
+				</section>
+				!-->
+				<section>
+					<h2>Questions?</h2>
+				</section>
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
